@@ -4,4 +4,5 @@
   object-fit: cover;
   z-index: -1; /* Ensures the video stays behind all content */
   object-position: center; /* Centers the video in the middle */
+  position: absolute;
 }

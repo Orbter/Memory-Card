@@ -1,0 +1,22 @@
+.card {
+  display: flex;
+  padding: 20px;
+  background-color: white;
+  background-image: url(../assets/card-border.png);
+  border-radius: 10px;
+  width: clamp(120px, 12vw, 1000px);
+  height: clamp(150px, 15vw, 1250px);
+  border-radius: 10px;
+  z-index: 2;
+}
+.photo-card {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
+.card-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
