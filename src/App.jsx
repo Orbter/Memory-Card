@@ -3,9 +3,9 @@ import Background from './components/Background';
 import { Card } from './components/Cards/Card';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
-import { getPhotos } from './api/gettingApi';
+import { attachPhotos } from './api/gettingPhotos';
 function App() {
-  getPhotos('Luffy Monkey D.');
+  console.log(attachPhotos());
   return (
     <div className="body">
       <Background />

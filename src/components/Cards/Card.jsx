@@ -12,9 +12,9 @@ function Card() {
   }, []);
 
   return (
-    <div className='card' ref={cardRef}>
-      <div className='card-image'>
-        <img src={luffyTest} className='photo-card'></img>
+    <div className="card" ref={cardRef}>
+      <div className="card-image">
+        <img src={luffyTest} className="photo-card"></img>
       </div>
     </div>
   );
