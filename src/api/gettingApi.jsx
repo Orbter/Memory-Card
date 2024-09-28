@@ -1,12 +1,6 @@
-async function getPhotos(id) {
-  try {
-    const response = await fetch(`https://api.jikan.moe/v4/characters/{${id}}`);
-    const data = await response.json();
-    const photo = data.data[0].images.jpg.image_url;
-    return photo;
-  } catch (error) {
-    console.error('Error: why the fuck did you do it', error);
-  }
+async function getPhotos() {
+  const response = await fetch(`https://api.jikan.moe/v4/anime/21/characters`);
+  const data = await response.json();
+  return data.data;
 }
 export { getPhotos };
-//https://api.jikan.moe/v4/characters/40
