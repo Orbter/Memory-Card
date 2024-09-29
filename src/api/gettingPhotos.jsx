@@ -27,7 +27,7 @@ async function attachPhotos() {
   for (let index = 0; index < 18; index++) {
     const characterList = allCharacters[index];
     const character = listUrl.find(
-      (person) => person.character.mal_id === Number(characterList.id),
+      (person) => person.character.mal_id === Number(characterList.id)
     );
     if (character) {
       const photo = character.character.images.jpg.image_url;
@@ -38,7 +38,6 @@ async function attachPhotos() {
     }
     allCharactersNew.push(characterList);
   }
-  console.log(allCharactersNew);
 
   return allCharactersNew;
 }
