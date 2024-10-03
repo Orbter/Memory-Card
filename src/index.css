@@ -25,6 +25,7 @@ body {
 }
 :root {
   --main-color: #e8c86d;
+  --main-color-transparent: rgba(232, 200, 109, 0.85);
 }
 .main-body {
   display: flex;

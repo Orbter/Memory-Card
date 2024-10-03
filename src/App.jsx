@@ -16,7 +16,7 @@ function App() {
       <GameProvider>
         <Background />
         <nav>
-          <Navbar />
+          <Navbar gameStart={gameStart} />
         </nav>
         <main className='main-body'>
           {gameStart.started ? (

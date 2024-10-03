@@ -1,3 +1,50 @@
 .logo {
   width: clamp(200px, 50vw, 600px);
 }
+
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  height: 13vh;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.all-score-container {
+  background-color: var(--main-color-transparent);
+  width: clamp(150px, 25vw, 212px);
+  height: clamp(90px, 17.5vw, 140px);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  font-family: 'Quicksand', system-ui;
+  border-radius: 8px;
+  font-weight: bold;
+  padding-left: 15px;
+  font-size: 3vw;
+}
+.score-container {
+  display: flex;
+  gap: 10px;
+}
+.best-score-container {
+  display: flex;
+  gap: 10px;
+}
+
+@media (max-width: 400px) {
+  .navbar {
+    flex-direction: column;
+    height: 20vh;
+  }
+  .all-score-container {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 800px) {
+  .all-score-container {
+    font-size: 1.5rem;
+  }
+}
