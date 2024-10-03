@@ -1,9 +1,12 @@
 import { Card } from '../components/Cards/Card';
+import { useContext } from 'react';
+function CardUi() {
+  const { gameMemory } = useContext(GameContext);
+  const [roundCharacters, setRoundCharacters] = gameMemory;
 
-function CardUi(characters) {
   return (
     <>
-      {characters.map((character, index) => (
+      {roundCharacters.map((character, index) => (
         <Card imgUrl={character.imgUrl} key={index} />
       ))}
     </>

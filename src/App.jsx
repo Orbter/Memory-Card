@@ -1,13 +1,16 @@
 import { useState } from 'react';
 import Background from './components/Background';
-import { Card } from './components/Cards/Card';
 import { Navbar } from './components/Navbar/Navbar';
 import { Footer } from './components/Footer/Footer';
 import { GameProvider } from './GameProvider';
 import { CardUi } from './ui/cardsDisplayer';
 import { MainMenu } from './ui/Menu';
 function App() {
-  const [gameStart, setGameStart] = useState(false);
+  const [gameStart, setGameStart] = useState({
+    started: false,
+    difficultyChosen: null,
+  });
+
   return (
     <div className='body'>
       <GameProvider>
@@ -16,7 +19,11 @@ function App() {
           <Navbar />
         </nav>
         <main className='main-body'>
-          {gameStart ? <CardUi /> : <MainMenu />}
+          {gameStart.started ? (
+            <CardUi />
+          ) : (
+            <MainMenu setGameStart={setGameStart} gameStart={gameStart} />
+          )}
         </main>
         <footer>
           <Footer />

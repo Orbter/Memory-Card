@@ -3,13 +3,13 @@ import { useContext } from 'react';
 import { choosingCharacters } from './choosingCharacters';
 import { attachPhotos } from '../api/gettingPhotos';
 import { GameContext } from '../GameProvider';
-function startGameEasy() {
+function startGame(gameStart, setGameStart) {
   const { gameMemory } = useContext(GameContext);
   const charactersChosen = choosingCharacters(6);
   const temporaryList = [];
   const {
-    listOfCharacterActive,
-    setListOfCharacterActive,
+    roundCharacters,
+    setRoundCharacters,
     onePieceCharacters,
     setOnePieceCharacters,
   } = gameMemory;
@@ -18,5 +18,11 @@ function startGameEasy() {
     const character = onePieceCharacters[charactersChosen[index]];
     temporaryList.push(character);
   }
-  setListOfCharacterActive(temporaryList);
+  setRoundCharacters(temporaryList);
+  setGameStart((prevState) => ({
+    ...prevState,
+    started: true,
+  }));
 }
+
+export { startGame };

@@ -1,7 +1,14 @@
-function DifficultyOptions({ text }) {
+function DifficultyOptions({ option, setGameStart }) {
+  const handlerGame = () => {
+    setGameStart((prevState) => ({
+      ...prevState,
+      difficultyChosen: option,
+    }));
+  };
+
   return (
-    <div className='difficulty-option'>
-      <h3 className='option-text'>{text}</h3>
+    <div className='difficulty-option' onClick={handlerGame}>
+      <h3 className='option-text'>{option.difficulty}</h3>
     </div>
   );
 }
