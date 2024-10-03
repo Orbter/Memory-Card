@@ -8,14 +8,7 @@ export const GameProvider = ({ children }) => {
     [],
   );
   const [listOfCharactersChosen, setListOfCharactersChosen] = useState([]);
-  const [roundCharacters, setRoundCharacters] = useState({
-    character1: null,
-    character2: null,
-    character3: null,
-    character4: null,
-    character5: null,
-    character6: null,
-  });
+  const [roundCharacters, setRoundCharacters] = useState([]);
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [rounds, setRounds] = useState(1);

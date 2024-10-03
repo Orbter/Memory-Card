@@ -1,10 +1,7 @@
-import { useContext } from 'react';
-
 import { choosingCharacters } from './choosingCharacters';
 import { attachPhotos } from '../api/gettingPhotos';
 import { GameContext } from '../GameProvider';
-function startGame(gameStart, setGameStart) {
-  const { gameMemory } = useContext(GameContext);
+async function startGame(gameStart, setGameStart, gameMemory) {
   const charactersChosen = choosingCharacters(6);
   const temporaryList = [];
   const {
@@ -13,9 +10,10 @@ function startGame(gameStart, setGameStart) {
     onePieceCharacters,
     setOnePieceCharacters,
   } = gameMemory;
+  const charactersArray = await onePieceCharacters;
 
   for (let index = 0; index < 6; index++) {
-    const character = onePieceCharacters[charactersChosen[index]];
+    const character = charactersArray[charactersChosen[index]];
     temporaryList.push(character);
   }
   setRoundCharacters(temporaryList);

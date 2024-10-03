@@ -1,25 +1,29 @@
 .card {
   display: flex;
-  padding: 20px;
   background-color: white;
   background-image: url(../assets/card-border.png);
   border-radius: 10px;
-  width: clamp(120px, 12vw, 1000px);
-  height: clamp(150px, 15vw, 1250px);
-  border-radius: 10px;
+
+  width: clamp(120px, 15.5vw, 180px);
+  height: clamp(150px, 18.5vw, 210px);
+
   z-index: 2;
   cursor: pointer;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 .photo-card {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: inherit;
   border-radius: 10px;
 }
 .card-image {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: clamp(100px, 13vw, 150px);
+  height: clamp(130px, 16vw, 180px);
 }

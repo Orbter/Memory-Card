@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-
+import { useEffect, useState, useContext } from 'react';
+import { GameContext } from '../GameProvider';
 import { DifficultyOptions } from '../components/Cards/DifficultyOptions';
 import '../style/menu.css';
 import { startGame } from '../logic/startGame';
@@ -9,10 +9,12 @@ function MainMenu({ setGameStart, gameStart }) {
     { difficulty: 'Medium', characters: 12 },
     { difficulty: 'Hard', characters: 18 },
   ];
+
+  const gameMemory = useContext(GameContext);
+
   useEffect(() => {
     if (gameStart.difficultyChosen) {
-      console.log(gameStart.difficultyChosen);
-      startGame(gameStart, setGameStart);
+      startGame(gameStart, setGameStart, gameMemory);
     }
   }, [gameStart]);
 
