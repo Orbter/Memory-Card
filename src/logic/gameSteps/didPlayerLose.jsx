@@ -1,0 +1,3 @@
+function didPlayerLose() {}
+
+export { didPlayerLose };

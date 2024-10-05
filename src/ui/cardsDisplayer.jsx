@@ -9,7 +9,11 @@ function CardUi() {
   return (
     <>
       {roundCharacters.map((character, index) => (
-        <Card imgUrl={character.imgUrl} key={index} />
+        <Card
+          imgUrl={character.imgUrl}
+          characterName={character.characterName}
+          key={index}
+        />
       ))}
     </>
   );
