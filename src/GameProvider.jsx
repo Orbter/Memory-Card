@@ -9,10 +9,11 @@ export const GameProvider = ({ children }) => {
   );
   const [listOfCharactersChosen, setListOfCharactersChosen] = useState([]);
   const [roundCharacters, setRoundCharacters] = useState([]);
+  const [totalRounds, setTotalRounds] = useState(0);
+
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [rounds, setRounds] = useState(1);
-
   const gameMemory = {
     onePieceCharacters,
     setOnePieceCharacters,
@@ -23,12 +24,16 @@ export const GameProvider = ({ children }) => {
     setListOfCharactersChosen,
     roundCharacters,
     setRoundCharacters,
+
     score,
     setScore,
     bestScore,
     setBestScore,
+
     rounds,
     setRounds,
+    totalRounds,
+    setTotalRounds,
   };
 
   return (

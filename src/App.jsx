@@ -26,7 +26,7 @@ function App() {
           )}
         </main>
         <footer>
-          <Footer />
+          <Footer gameStart={gameStart.started} />
         </footer>
       </GameProvider>
     </div>

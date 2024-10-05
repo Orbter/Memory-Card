@@ -5,13 +5,13 @@ async function startGame(gameStart, setGameStart, gameMemory) {
   const charactersChosen = choosingCharacters(6);
   const temporaryList = [];
   const {
-    roundCharacters,
     setRoundCharacters,
     onePieceCharacters,
     setOnePieceCharacters,
+    setTotalRounds,
   } = gameMemory;
   const charactersArray = await onePieceCharacters;
-
+  setTotalRounds(gameStart.difficultyChosen.characters);
   for (let index = 0; index < 6; index++) {
     const character = charactersArray[charactersChosen[index]];
     temporaryList.push(character);

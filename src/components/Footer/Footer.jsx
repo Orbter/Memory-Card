@@ -1,12 +1,15 @@
 import '../../style/footer.css';
 import { Mute } from './mute';
 import { PlayGuide } from './play-guide';
-
-function Footer() {
+import { Rounds } from './Round';
+function Footer({ gameStart }) {
   return (
     <div className='footer-container'>
-      <Mute />
-      <PlayGuide />
+      <div className='action-container'>
+        <Mute />
+        <PlayGuide />
+      </div>
+      {gameStart && <Rounds />}
     </div>
   );
 }
