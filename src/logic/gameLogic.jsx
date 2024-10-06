@@ -2,7 +2,7 @@ import { markCharacter } from './gameSteps/markCharacter';
 import { didPlayerLose } from './gameSteps/didPlayerLose';
 import { characterChosen } from './gameSteps/chrecterCaculator';
 function gameLogic(gameMemory, characterName) {
-  const lose = didPlayerLose(gameMemory);
+  const lose = didPlayerLose(gameMemory, characterName);
   const { rounds, totalRounds, setRounds } = gameMemory;
   if (lose) {
     console.log('end Screen Pop Up');

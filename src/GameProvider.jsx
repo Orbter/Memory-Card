@@ -5,7 +5,7 @@ export const GameContext = createContext();
 export const GameProvider = ({ children }) => {
   const [onePieceCharacters, setOnePieceCharacters] = useState(attachPhotos());
   const [listOfCharactersNotChosen, setListOfCharactersNotChosen] = useState(
-    [],
+    attachPhotos()
   );
   const [listOfCharactersChosen, setListOfCharactersChosen] = useState([]);
   const [roundCharacters, setRoundCharacters] = useState([]);

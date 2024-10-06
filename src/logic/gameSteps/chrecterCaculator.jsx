@@ -11,19 +11,21 @@ function shuffleCharacters(array) {
     if (numberWrong === false) {
       counter--;
       newArray.push(array[number]);
+      numbersCantBe.push(number);
     }
   }
   return newArray;
 }
 
-function characterChosen(gameMemory) {
+async function characterChosen(gameMemory) {
   const { setRoundCharacters, listOfCharactersNotChosen, onePieceCharacters } =
     gameMemory;
-  let copyListCharacters = onePieceCharacters;
-  const roundCharacters = [];
-
+  let copyListCharacters = await onePieceCharacters;
+  let copyNotChosen = await listOfCharactersNotChosen;
+  const roundCharactersNow = [];
+  console.log(copyListCharacters);
   const randomNumberGeneratorWinner = () => {
-    const number = Math.floor(Math.random() * listOfCharactersNotChosen.length);
+    const number = Math.floor(Math.random() * copyNotChosen.length);
     return number;
   };
 
@@ -34,7 +36,7 @@ function characterChosen(gameMemory) {
 
   const characterToWin = () => {
     const randomNumber = randomNumberGeneratorWinner();
-    const characterWin = listOfCharactersNotChosen[randomNumber];
+    const characterWin = copyNotChosen[randomNumber];
     copyListCharacters = copyListCharacters.filter(
       (person) => person.characterName !== characterWin.characterName
     );
@@ -42,7 +44,7 @@ function characterChosen(gameMemory) {
   };
 
   const firstWinner = characterToWin();
-  roundCharacters.push(firstWinner);
+  roundCharactersNow.push(firstWinner.characterWin);
 
   for (let index = 0; index < 5; index++) {
     const number = randomNumberGenerator();
@@ -50,10 +52,10 @@ function characterChosen(gameMemory) {
     copyListCharacters = copyListCharacters.filter(
       (person) => person.characterName !== character.characterName
     );
-    roundCharacters.push(character);
+    roundCharactersNow.push(character);
   }
 
-  const unOrganizeArray = shuffleCharacters(roundCharacters);
+  const unOrganizeArray = shuffleCharacters(roundCharactersNow);
   setRoundCharacters(unOrganizeArray);
 }
 export { characterChosen };
