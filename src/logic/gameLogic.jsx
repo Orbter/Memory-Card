@@ -1,5 +1,6 @@
 import { markCharacter } from './gameSteps/markCharacter';
 import { didPlayerLose } from './gameSteps/didPlayerLose';
+import { characterChosen } from './gameSteps/chrecterCaculator';
 function gameLogic(gameMemory, characterName) {
   const lose = didPlayerLose(gameMemory);
   const { rounds, totalRounds, setRounds } = gameMemory;
@@ -11,6 +12,7 @@ function gameLogic(gameMemory, characterName) {
     const currentRounds = rounds + 1;
     setRounds(currentRounds);
     markCharacter(gameMemory, characterName);
+    characterChosen(gameMemory);
   }
 }
 
