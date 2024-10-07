@@ -3,11 +3,11 @@ import { didPlayerLose } from './gameSteps/didPlayerLose';
 import { characterChosen } from './gameSteps/chrecterCaculator';
 function gameLogic(gameMemory, characterName) {
   const lose = didPlayerLose(gameMemory, characterName);
-  const { rounds, totalRounds, setRounds } = gameMemory;
+  const { rounds, totalRounds, setRounds, setWinGame } = gameMemory;
   if (lose) {
-    console.log('end Screen Pop Up');
+    setWinGame('lose');
   } else if (rounds === totalRounds) {
-    console.log('win Screen Pop up');
+    setWinGame('win');
   } else {
     const currentRounds = rounds + 1;
     setRounds(currentRounds);

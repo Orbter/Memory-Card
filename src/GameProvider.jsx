@@ -5,7 +5,7 @@ export const GameContext = createContext();
 export const GameProvider = ({ children }) => {
   const [onePieceCharacters, setOnePieceCharacters] = useState(attachPhotos());
   const [listOfCharactersNotChosen, setListOfCharactersNotChosen] = useState(
-    attachPhotos()
+    attachPhotos(),
   );
   const [listOfCharactersChosen, setListOfCharactersChosen] = useState([]);
   const [roundCharacters, setRoundCharacters] = useState([]);
@@ -14,6 +14,8 @@ export const GameProvider = ({ children }) => {
   const [score, setScore] = useState(0);
   const [bestScore, setBestScore] = useState(0);
   const [rounds, setRounds] = useState(1);
+
+  const [winGame, setWinGame] = useState(null);
   const gameMemory = {
     onePieceCharacters,
     setOnePieceCharacters,
@@ -34,6 +36,9 @@ export const GameProvider = ({ children }) => {
     setRounds,
     totalRounds,
     setTotalRounds,
+
+    winGame,
+    setWinGame,
   };
 
   return (

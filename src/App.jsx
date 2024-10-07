@@ -5,12 +5,12 @@ import { Footer } from './components/Footer/Footer';
 import { GameProvider } from './GameProvider';
 import { CardUi } from './ui/cardsDisplayer';
 import { MainMenu } from './ui/Menu';
+import { WinOrLose } from './ui/WinOrLose';
 function App() {
   const [gameStart, setGameStart] = useState({
     started: false,
     difficultyChosen: null,
   });
-
   return (
     <div className='body'>
       <GameProvider>
@@ -24,6 +24,7 @@ function App() {
           ) : (
             <MainMenu setGameStart={setGameStart} gameStart={gameStart} />
           )}
+          {<WinOrLose />}
         </main>
         <footer>
           <Footer gameStart={gameStart.started} />

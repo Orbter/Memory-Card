@@ -1,0 +1,49 @@
+.win-screen-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 11;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.win-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  object-position: center;
+  position: absolute;
+  border-radius: 5px;
+}
+
+.win-screen-text {
+  height: 60%;
+  width: 89%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: 'Bangers', system-ui;
+  color: #f2d684;
+  font-size: clamp(2.5rem, 7vw, 5.3rem);
+}
+.play-again-button-win {
+  border: none;
+  background-color: #90e0e5;
+  color: white;
+  width: clamp(170px, 28vw, 280px);
+  height: clamp(55px, 10vw, 100px);
+  border-radius: 9px;
+  cursor: pointer;
+  font-family: 'Quicksand', system-ui;
+  font-weight: bold;
+  font-size: clamp(1.45rem, 4vw, 2.2rem);
+  transition: all 0.2s;
+}
+.play-again-button-win:hover {
+  transform: scale(1.1);
+}

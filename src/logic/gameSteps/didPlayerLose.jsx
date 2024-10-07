@@ -3,7 +3,7 @@ function didPlayerLose(gameMemory, characterName) {
   let playerChooseWrong = false;
   for (let index = 0; index < listOfCharactersChosen.length; index++) {
     const character = listOfCharactersChosen[index];
-    if (character.characterName === characterName) playerChooseWrong = true;
+    if (character === characterName) playerChooseWrong = true;
   }
   return playerChooseWrong;
 }
