@@ -23,7 +23,6 @@ async function characterChosen(gameMemory) {
   let copyListCharacters = await onePieceCharacters;
   let copyNotChosen = await listOfCharactersNotChosen;
   const roundCharactersNow = [];
-  console.log(copyListCharacters);
   const randomNumberGeneratorWinner = () => {
     const number = Math.floor(Math.random() * copyNotChosen.length);
     return number;
@@ -38,7 +37,7 @@ async function characterChosen(gameMemory) {
     const randomNumber = randomNumberGeneratorWinner();
     const characterWin = copyNotChosen[randomNumber];
     copyListCharacters = copyListCharacters.filter(
-      (person) => person.characterName !== characterWin.characterName
+      (person) => person.characterName !== characterWin.characterName,
     );
     return { characterWin };
   };
@@ -50,7 +49,7 @@ async function characterChosen(gameMemory) {
     const number = randomNumberGenerator();
     const character = copyListCharacters[number];
     copyListCharacters = copyListCharacters.filter(
-      (person) => person.characterName !== character.characterName
+      (person) => person.characterName !== character.characterName,
     );
     roundCharactersNow.push(character);
   }
