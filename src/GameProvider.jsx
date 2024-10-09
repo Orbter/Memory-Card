@@ -3,9 +3,11 @@ import { attachPhotos } from './api/gettingPhotos';
 export const GameContext = createContext();
 
 export const GameProvider = ({ children }) => {
-  const [onePieceCharacters, setOnePieceCharacters] = useState(attachPhotos());
+  const [onePieceCharacters, setOnePieceCharacters] = useState(() =>
+    attachPhotos()
+  );
   const [listOfCharactersNotChosen, setListOfCharactersNotChosen] = useState(
-    attachPhotos(),
+    () => attachPhotos()
   );
   const [listOfCharactersChosen, setListOfCharactersChosen] = useState([]);
   const [roundCharacters, setRoundCharacters] = useState([]);

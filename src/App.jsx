@@ -12,19 +12,19 @@ function App() {
     difficultyChosen: null,
   });
   return (
-    <div className='body'>
+    <div className="body">
       <GameProvider>
         <Background />
         <nav>
           <Navbar gameStart={gameStart} />
         </nav>
-        <main className='main-body'>
+        <main className="main-body">
           {gameStart.started ? (
             <CardUi />
           ) : (
             <MainMenu setGameStart={setGameStart} gameStart={gameStart} />
           )}
-          {<WinOrLose />}
+          {<WinOrLose setGameStart={setGameStart} />}
         </main>
         <footer>
           <Footer gameStart={gameStart.started} />

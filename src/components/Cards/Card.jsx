@@ -4,16 +4,25 @@ import '../../style/card.css';
 import VanillaTilt from 'vanilla-tilt';
 import { GameContext } from '../../GameProvider';
 import { gameLogic } from '../../logic/gameLogic';
+
 function Card(characterData) {
   const cardRef = useRef(null);
   const imgSrc = characterData.imgUrl;
   const characterName = characterData.characterName;
+
   useEffect(() => {
-    VanillaTilt.init(cardRef.current);
-    return () => cardRef.current.vanillaTilt.destroy();
+    if (cardRef.current) {
+      VanillaTilt.init(cardRef.current);
+    }
+
+    return () => {
+      if (cardRef.current?.vanillaTilt) {
+        cardRef.current.vanillaTilt.destroy();
+      }
+    };
   }, []);
+
   const gameMemory = useContext(GameContext);
-  useEffect(() => {}, []);
 
   const gameFunction = () => {
     gameLogic(gameMemory, characterName);
@@ -21,15 +30,16 @@ function Card(characterData) {
 
   return (
     <div
-      className='card'
+      className="card"
       ref={cardRef}
       data-character-name={characterName}
       onClick={gameFunction}
     >
-      <div className='card-image'>
-        <img src={imgSrc} className='photo-card'></img>
+      <div className="card-image">
+        <img src={imgSrc} className="photo-card"></img>
       </div>
     </div>
   );
 }
+
 export { Card };
