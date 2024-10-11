@@ -8,20 +8,20 @@ function WinOrLose({ setGameStart }) {
   const { winGame, setWinGame } = gameMemory;
 
   return (
-    <div className="result">
+    <>
       {winGame !== null && (
-        <>
-          <div className="overlay"></div>
-          <div className="result-container">
+        <div className='result'>
+          <div className='overlay'></div>
+          <div className='result-container'>
             {winGame === 'win' ? (
               <WinScreen setGameStart={setGameStart} />
             ) : (
               <LoseSCreen setGameStart={setGameStart} />
             )}
           </div>
-        </>
+        </div>
       )}
-    </div>
+    </>
   );
 }
 export { WinOrLose };

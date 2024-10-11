@@ -6,7 +6,9 @@ function Footer({ gameStart }) {
   return (
     <div className='footer-container'>
       <div className='action-container'>
-        <Mute />
+        <div className='mute-container'>
+          <Mute />
+        </div>
         <PlayGuide />
       </div>
       {gameStart && <Rounds />}
