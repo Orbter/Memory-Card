@@ -11,13 +11,13 @@ function PlayGuide() {
   };
 
   return (
-    <div className='all-guide'>
-      {!isHover && (
-        <div
-          className='guide-container'
-          onMouseEnter={changeHover}
-          onMouseLeave={cancelHover}
-        >
+    <div
+      className={isHover ? 'hoverd' + ' all-guide' : 'all-guide'}
+      onMouseEnter={changeHover}
+      onMouseLeave={cancelHover}
+    >
+      {isHover && (
+        <div className='guide-container'>
           <div className='mini-guide'>
             <p className='guide-text'>don't pick the same card twice!</p>
           </div>
@@ -26,11 +26,7 @@ function PlayGuide() {
           </div>
         </div>
       )}
-      <div
-        className='action-background'
-        onMouseEnter={() => changeHover()}
-        onMouseLeave={() => cancelHover()}
-      >
+      <div className='action-background' onMouseEnter={() => changeHover()}>
         <img className='photo-action' src={questions}></img>
       </div>
     </div>

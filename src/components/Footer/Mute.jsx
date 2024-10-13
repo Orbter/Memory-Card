@@ -46,7 +46,11 @@ function Mute() {
     <>
       {!isMuted && isPlaying && (
         <div
-          className='volume-slider-container'
+          className={
+            isHover
+              ? 'volume-slider-container hover-mute'
+              : 'volume-slider-container'
+          }
           onMouseEnter={changeHover}
           onMouseLeave={cancelHover}
         >

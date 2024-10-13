@@ -51,7 +51,6 @@
   /* Adjust width and height as needed */
   width: 100%;
   height: 100%;
-  height: 120px;
 }
 
 .volume-slider {
@@ -118,4 +117,17 @@
   border-radius: 6px;
   height: 30%;
   text-align: center;
+}
+.all-guide {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+}
+
+.hoverd {
+  width: 80px;
+  height: 170px;
+}
+.hover-mute {
+  height: 120px;
 }
