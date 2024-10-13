@@ -2,13 +2,17 @@ import logo from '../../assets/one-piece-logo.svg';
 import '../../style/navbar.css';
 import { GameContext } from '../../GameProvider';
 import { useContext } from 'react';
-function Navbar({ gameStart }) {
+import { playAgain } from '../../logic/playAgain';
+function Navbar({ gameStart, setGameStart }) {
   const gameMemory = useContext(GameContext);
   const { score, bestScore } = gameMemory;
 
   return (
     <div className='navbar'>
-      <div className='logo-container'>
+      <div
+        className='logo-container'
+        onClick={() => playAgain(gameMemory, setGameStart)}
+      >
         <img className='logo' src={logo} />
       </div>
       {gameStart.started && (

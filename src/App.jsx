@@ -12,13 +12,13 @@ function App() {
     difficultyChosen: null,
   });
   return (
-    <div className="body">
+    <div className='body'>
       <GameProvider>
         <Background />
         <nav>
-          <Navbar gameStart={gameStart} />
+          <Navbar gameStart={gameStart} setGameStart={setGameStart} />
         </nav>
-        <main className="main-body">
+        <main className='main-body'>
           {gameStart.started ? (
             <CardUi />
           ) : (

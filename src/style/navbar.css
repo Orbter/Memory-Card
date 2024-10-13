@@ -1,5 +1,5 @@
 .logo {
-  width: clamp(200px, 50vw, 600px);
+  width: clamp(200px, 25vw, 300px);
 }
 
 .navbar {
@@ -32,6 +32,10 @@
 .best-score-container {
   display: flex;
   gap: 10px;
+}
+
+.logo-container {
+  cursor: pointer;
 }
 
 @media (max-width: 400px) {
