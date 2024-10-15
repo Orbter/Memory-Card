@@ -1,5 +1,5 @@
 .logo {
-  width: clamp(200px, 25vw, 300px);
+  width: clamp(150px, 30vw, 300px);
 }
 
 .navbar {
@@ -10,10 +10,11 @@
   height: 13vh;
   margin-left: 15px;
   margin-right: 15px;
+  margin-top: 20px;
 }
 .all-score-container {
   background-color: var(--main-color-transparent);
-  width: clamp(150px, 25vw, 212px);
+  width: clamp(120px, 25vw, 212px);
   height: clamp(90px, 17.5vw, 140px);
   color: white;
   display: flex;
