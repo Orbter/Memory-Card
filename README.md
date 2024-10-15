@@ -4,9 +4,9 @@
 
 The Memory Card Game is an engaging, interactive web application built with React. It challenges players to test and improve their memory skills by matching pairs of cards. With added background music and video elements, the game offers an immersive experience. This project helped me expand my knowledge of React, particularly in state management, `useEffect` optimization, and integrating multimedia components within a React application.
 
-[![Project Demo](https://github.com/user-attachments/assets/91dd96d1-aaa5-4f59-97fa-9e60030baa1e)](https://orbter.github.io/react-memory-game/)
-
-Click the image above to try out the live demo!
+[![Project Demo](https://github.com/user-attachments/assets/91dd96d1-aaa5-4f59-97fa-9e60030baa1e)](https://orbter.github.io/Memory-Card/)
+[![Project Demo](https://github.com/user-attachments/assets/5d02877d-f00c-4b3f-8149-463e6df2024b)](https://orbter.github.io/Memory-Card/)
+Click the images above to try out the live demo!
 
 ## Features
 
